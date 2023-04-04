@@ -1,0 +1,21 @@
+:root {
+    --ballSize: 100px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ball {
+    width: var(--ballSize);
+    height: var(--ballSize);
+    background-color: black;
+    border-radius: 50%;
+    transition: width 3s, height 3s;
+    transition-timing-function: ease;
+  }
+ 

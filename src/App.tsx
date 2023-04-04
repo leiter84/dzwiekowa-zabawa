@@ -1,12 +1,18 @@
 
-import './App.css';
+import { useEffect, useState } from 'react';
+import JumpingBall from './JumpingBall/JumpingBall';
 
-function App() {
-  return (
-    <div className="container">
-      <div className="ball jumping" />
-    </div>
-  );
+export default function App() {
+  const [microphone, setMicrophone] = useState<MediaStream | undefined>(undefined)
+
+  useEffect(()=>{
+    async function fetchMicrophone(){
+      const mic = await navigator.mediaDevices.getUserMedia({audio: true, video: true});
+      setMicrophone(mic);
+    }
+    
+    fetchMicrophone();
+  })
+
+  return <JumpingBall microphone={microphone}/>
 }
-
-export default App;
