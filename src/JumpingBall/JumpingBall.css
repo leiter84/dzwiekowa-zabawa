@@ -1,5 +1,6 @@
 :root {
     --ballSize: 100px;
+    --ballColor: black;
 }
 
 .container {
@@ -13,9 +14,10 @@
   .ball {
     width: var(--ballSize);
     height: var(--ballSize);
-    background-color: black;
+    background-color: var(--ballColor);
     border-radius: 50%;
-    transition: width 3s, height 3s;
-    transition-timing-function: ease;
+    transition-property: width, height;
+    transition-duration: 3s;
+    transition-timing-function: ease-out;
   }
  

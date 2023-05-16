@@ -19,7 +19,7 @@ export default function JumpingBall({microphone}: JumpingBallProps) {
         audioAnalyser.getByteFrequencyData(data);
         const voiceStrength = data.reduce((sum, item)=>sum+item,0);
         if (voiceStrength>100){
-          document.documentElement.style.setProperty("--ballSize", `${voiceStrength}px`)
+          document.documentElement.style.setProperty("--ballSize", `${voiceStrength}px`);
         }
         requestAnimationFrame(loop);
       }
